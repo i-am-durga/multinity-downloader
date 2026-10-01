@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multinity Downloader - Lightning Fast Media Downloader</title>
+  <meta name="description" content="Download YouTube videos in HD MP4 or extract crystal clear MP3 audio instantly with zero ads and zero limits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <div class="app-layout">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <h1>Multinity<span>Downloader</span></h1>
+      </div>
+      <p class="tagline">High-speed, ad-free YouTube Video &amp; MP3 Extractor</p>
+    </header>
+
+    <!-- Main Card -->
+    <main class="main-card">
+      <div class="search-box">
+        <div class="input-wrapper">
+          <span class="url-icon">🔗</span>
+          <input type="text" id="video-url" placeholder="Paste YouTube link here (e.g. https://www.youtube.com/watch?v=...)" autocomplete="off">
+          <button type="button" id="btn-paste" class="btn-paste" onclick="pasteFromClipboard()">Paste</button>
+        </div>
+        <button id="btn-fetch" class="btn-primary" onclick="fetchVideoDetails()">
+          <span id="btn-text">Analyze Video</span>
+          <span id="btn-spinner" class="spinner hidden"></span>
+        </button>
+      </div>
+
+      <div id="error-banner" class="error-banner hidden"></div>
+
+      <!-- Preview Card -->
+      <section id="preview-card" class="preview-card hidden">
+        <div class="thumbnail-wrapper">
+          <img id="video-thumb" src="" alt="Thumbnail">
+          <span id="video-duration" class="duration-badge">00:00</span>
+        </div>
+        <div class="video-info">
+          <h3 id="video-title">Video Title</h3>
+          <p class="channel-meta">By <strong id="video-author">Channel</strong> • <span id="video-views">0</span> views</p>
+
+          <div class="format-options">
+            <div class="format-tabs">
+              <button id="tab-video" class="format-tab active" onclick="switchFormatTab('video')">📹 Video (MP4)</button>
+              <button id="tab-audio" class="format-tab" onclick="switchFormatTab('audio')">🎵 Audio (MP3)</button>
+            </div>
+
+            <!-- Video Quality Selector -->
+            <div id="video-format-container" class="quality-select-wrapper">
+              <label for="quality-select">Select Resolution:</label>
+              <select id="quality-select">
+                <option value="">Best Available Quality</option>
+              </select>
+            </div>
+
+            <!-- Download Action -->
+            <button id="btn-download" class="btn-download" onclick="startDownload()">
+              📥 Download Now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Grid -->
+      <section class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🚀</div>
+          <h4>Zero Speed Cap</h4>
+          <p>Direct pipe streams with maximum throughput from YouTube servers.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎧</div>
+          <h4>Lossless MP3</h4>
+          <p>Extract pristine 320kbps/256kbps audio tracks in one click.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <h4>100% Ad-Free</h4>
+          <p>No shady popups, redirects, or malicious software bundles.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Developed with ❤️ by <a href="https://github.com/i-am-durga" target="_blank" rel="noopener">Durga Prasad Sah</a>. For personal educational use.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
